@@ -2,4 +2,4 @@
 
 
 
-![Koalaanimation.gif](https://github.com/Kristianbarkhald/Kaoala-Animation/blob/master/Koalaanimation.gif)
+![Koalaanimation.gif](https://github.com/Kristianbarkhald/Koala-Animation/blob/master/Koalaanimation.gif)
