@@ -1,0 +1,556 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #a6c1a6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.koala {
+  -webkit-transform: scale(1.2) translateY(40px);
+          transform: scale(1.2) translateY(40px);
+  zoom: 1.2;
+  -webkit-animation: koala 0.25s ease-in-out alternate infinite;
+          animation: koala 0.25s ease-in-out alternate infinite;
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+}
+
+.koala_ears {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: -1;
+  height: 2px;
+  -webkit-transform: translateY(23px) scale(1.2s);
+          transform: translateY(23px) scale(1.2s);
+  -webkit-animation: ears 0.25s ease-in-out infinite alternate;
+          animation: ears 0.25s ease-in-out infinite alternate;
+}
+
+.koala_ears:before, .koala_ears:after {
+  content: "";
+  display: block;
+  background: #1b1e23;
+  width: 3px;
+  height: 10px;
+  border: 5px solid #5F6A6A;
+  border-radius: 5px;
+}
+
+.koala_ears:before {
+  -webkit-transform: rotate(140deg) scale(1, 1.05);
+          transform: rotate(140deg) scale(1, 1.05);
+  border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+}
+
+.koala_ears:after {
+  -webkit-transform: rotate(-140deg) scale(1, 1.05);
+          transform: rotate(-140deg) scale(1, 1.05);
+  border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+}
+
+.koala_contain {
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-animation: tilt 3s ease-in-out alternate infinite;
+          animation: tilt 3s ease-in-out alternate infinite;
+}
+
+.koala_head, .koala_body {
+  background: #5F6A6A;
+  height: 50px;
+  width: 60px;
+  border: 0.3px solid black;
+  border-radius: 30px 30px 15px 15px/40px 40px 10px 10px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.koala_eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  width: 65%;
+  left: 175;
+  top: 40%;
+  -webkit-animation: eyes 3s ease-in-out infinite alternate;
+          animation: eyes 3s ease-in-out infinite alternate;
+}
+
+.koala_eyes:before, .koala_eyes:after {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  border: 2px solid #eaf4de;
+  background: #1b1e23;
+}
+
+.koala_eyes:before {
+  -webkit-transform: rotate(-30deg) scale(1, 0.75);
+          transform: rotate(-30deg) scale(1, 0.75);
+  border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+}
+
+.koala_eyes:after {
+  -webkit-transform: rotate(30deg) scale(1, 0.75);
+          transform: rotate(30deg) scale(1, 0.75);
+  border-radius: 8px 12px 8px 8px/8px 12px 8px 8px;
+}
+
+.koala_nose {
+  height: 30px;
+  width: 10px;
+  background: #1b1e23;
+  border: 1px solid #eaf4de;
+  border-radius: 16px;
+  -webkit-transform: scale(1, 0.5);
+          transform: scale(1, 0.5);
+  position: absolute;
+  top: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: nose 3s ease-in-out infinite;
+          animation: nose 3s ease-in-out infinite;
+}
+
+.koala_nose:before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 5px;
+  border-radius: 2px;
+  background: #1b1e23;
+  margin-top: 4px;
+  -webkit-animation: eyes 3s ease-in-out alternate infinite;
+          animation: eyes 3s ease-in-out alternate infinite;
+}
+
+.koala_nose:after {
+  content: "";
+  display: block;
+  height: 15px;
+  width: 1.5px;
+  background: #1b1e23;
+  border-radius: 3px;
+  -webkit-animation: eyes 3s ease-in-out alternate infinite;
+          animation: eyes 3s ease-in-out alternate infinite;
+}
+
+.koala_mouth {
+  height: 15px;
+  width: 20px;
+  background: #CD5C5C;
+  border: 1px solid #1b1e23;
+  border-radius: 16px;
+  -webkit-transform: scale(1, 0.5);
+          transform: scale(1, 0.5);
+  position: absolute;
+  top: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-animation: nose 3s ease-in-out infinite;
+          animation: nose 3s ease-in-out infinite;
+}
+
+.koala_mouth:after {
+  content: "";
+  display: block;
+  height: 8px;
+  width: 2.5px;
+  background: white;
+  border-radius: 3px;
+  -webkit-animation: eyes 3s ease-in-out alternate infinite;
+          animation: eyes 3s ease-in-out alternate infinite;
+}
+
+.koala_arms {
+  position: relative;
+}
+
+.koala_arms:before, .koala_arms:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: #5F6A6A;
+  border: 1px solid #1b1e23;
+  width: 13px;
+  height: 30px;
+  top: 3px;
+  border-radius: 5px 5px 5px 5px;
+  -webkit-transform-origin: center top;
+          transform-origin: center top;
+  z-index: -1;
+}
+
+.koala_arms:before {
+  -webkit-transform: rotateZ(120deg);
+          transform: rotateZ(120deg);
+  left: 10px;
+  -webkit-animation: wave 0.5s ease-in-out alternate infinite;
+          animation: wave 0.5s ease-in-out alternate infinite;
+}
+
+.koala_arms:after {
+  right: 10px;
+  -webkit-transform: rotateZ(-35deg);
+          transform: rotateZ(-35deg);
+  -webkit-animation: offhand 0.8s ease-in-out alternate infinite;
+          animation: offhand 0.8s ease-in-out alternate infinite;
+}
+
+.koala_body {
+  z-index: -1;
+  border: 1px solid #1b1e23;
+  height: 80px;
+  background: #5F6A6A;
+  border-bottom: 1px solid #1b1e23;
+  border-right: 1px solid #1b1e23;
+  border-left: 1px solid #1b1e23;
+  border-radius: 20px 20px 25px 25px / 40px 40px 25px 25px;
+  -webkit-transform: scale(1, 0.65) translateY(-30px);
+          transform: scale(1, 0.65) translateY(-30px);
+  -webkit-animation: breathe 0.25s ease-in-out infinite alternate;
+          animation: breathe 0.25s ease-in-out infinite alternate;
+}
+
+.koala_mage {
+  background: #eaf4de;
+  height: 45px;
+  width: 25px;
+  margin-top: -80px;
+  margin-left: 19px;
+  border: 0.3px solid black;
+  border-radius: 30px 30px 15px 15px/40px 40px 10px 10px;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.koala_legs {
+  position: relative;
+  -webkit-transform: translateY(-35px);
+          transform: translateY(-35px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  z-index: -2;
+  width: 50px;
+  margin-left: 5px;
+}
+
+.koala_legs:before, .koala_legs:after {
+  content: "";
+  background: #5F6A6A;
+  display: block;
+  width: 18px;
+  height: 25px;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #1b1e23;
+}
+
+.koala_legs:before {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  -webkit-animation: run-r 0.5s ease-in-out alternate infinite;
+          animation: run-r 0.5s ease-in-out alternate infinite;
+}
+
+.koala_legs:after {
+  -webkit-transform: translateY(-16px);
+          transform: translateY(-16px);
+  animation: run-r 0.5s ease-in-out alternate-reverse infinite;
+}
+
+.koala_shadow {
+  content: "";
+  background: #1b1e23;
+  display: block;
+  width: 60px;
+  height: 60px;
+  -webkit-transform: scale(1, 0.3);
+          transform: scale(1, 0.3);
+  border-radius: 30px;
+  position: relative;
+  z-index: -1;
+  opacity: 0.2;
+  -webkit-animation: shadow 0.25s ease-in-out alternate infinite;
+          animation: shadow 0.25s ease-in-out alternate infinite;
+}
+
+.weight {
+  -webkit-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-animation: weight 0.5s ease-in-out alternate infinite;
+          animation: weight 0.5s ease-in-out alternate infinite;
+}
+
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(120deg);
+            transform: rotateZ(120deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(120deg);
+            transform: rotateZ(120deg);
+  }
+}
+
+@-webkit-keyframes offhand {
+  0% {
+    -webkit-transform: rotateZ(-110deg);
+            transform: rotateZ(-110deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-80deg);
+            transform: rotateZ(-80deg);
+  }
+}
+
+@keyframes offhand {
+  0% {
+    -webkit-transform: rotateZ(-110deg);
+            transform: rotateZ(-110deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-80deg);
+            transform: rotateZ(-80deg);
+  }
+}
+
+@-webkit-keyframes ears {
+  0% {
+    -webkit-transform: scale(1.1, 1) translateY(0.02px);
+            transform: scale(1.1, 1) translateY(0.02px);
+  }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+  }
+}
+
+@keyframes ears {
+  0% {
+    -webkit-transform: scale(1.1, 1) translateY(0.02px);
+            transform: scale(1.1, 1) translateY(0.02px);
+  }
+  100% {
+    -webkit-transform: rotateZ(1deg);
+            transform: rotateZ(1deg);
+  }
+}
+
+@-webkit-keyframes tilt {
+  0% {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(8deg);
+            transform: rotateZ(8deg);
+  }
+}
+
+@keyframes tilt {
+  0% {
+    -webkit-transform: rotateZ(5deg);
+            transform: rotateZ(5deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(8deg);
+            transform: rotateZ(8deg);
+  }
+}
+
+@-webkit-keyframes breathe {
+  0% {
+    -webkit-transform: scale(1, 0.64) translateY(-30px);
+            transform: scale(1, 0.64) translateY(-30px);
+  }
+  100% {
+    -webkit-transform: scale(1, 0.68) translateY(-30px);
+            transform: scale(1, 0.68) translateY(-30px);
+  }
+}
+
+@keyframes breathe {
+  0% {
+    -webkit-transform: scale(1, 0.64) translateY(-30px);
+            transform: scale(1, 0.64) translateY(-30px);
+  }
+  100% {
+    -webkit-transform: scale(1, 0.68) translateY(-30px);
+            transform: scale(1, 0.68) translateY(-30px);
+  }
+}
+
+@-webkit-keyframes nose {
+  0% {
+    -webkit-transform: scale(1, 0.5) translateY(-0.5px);
+            transform: scale(1, 0.5) translateY(-0.5px);
+  }
+  100% {
+    -webkit-transform: scale(1, 0.5) translateY(0.5px);
+            transform: scale(1, 0.5) translateY(0.5px);
+  }
+}
+
+@keyframes nose {
+  0% {
+    -webkit-transform: scale(1, 0.5) translateY(-0.5px);
+            transform: scale(1, 0.5) translateY(-0.5px);
+  }
+  100% {
+    -webkit-transform: scale(1, 0.5) translateY(0.5px);
+            transform: scale(1, 0.5) translateY(0.5px);
+  }
+}
+
+@-webkit-keyframes koala {
+  0% {
+    -webkit-transform: scale(1) translateY(50px);
+            transform: scale(1) translateY(50px);
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(55px);
+            transform: scale(1) translateY(55px);
+  }
+}
+
+@keyframes koala {
+  0% {
+    -webkit-transform: scale(1) translateY(50px);
+            transform: scale(1) translateY(50px);
+  }
+  100% {
+    -webkit-transform: scale(1) translateY(55px);
+            transform: scale(1) translateY(55px);
+  }
+}
+
+@-webkit-keyframes shadow {
+  0% {
+    -webkit-transform: scale(1.2, 0.3) translateY(-30px);
+            transform: scale(1.2, 0.3) translateY(-30px);
+  }
+  100% {
+    -webkit-transform: scale(1.15, 0.3) translateY(-27px);
+            transform: scale(1.15, 0.3) translateY(-27px);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    -webkit-transform: scale(1.2, 0.3) translateY(-30px);
+            transform: scale(1.2, 0.3) translateY(-30px);
+  }
+  100% {
+    -webkit-transform: scale(1.15, 0.3) translateY(-27px);
+            transform: scale(1.15, 0.3) translateY(-27px);
+  }
+}
+
+@-webkit-keyframes weight {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+}
+
+@keyframes weight {
+  0% {
+    -webkit-transform: rotateZ(-10deg);
+            transform: rotateZ(-10deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(10deg);
+            transform: rotateZ(10deg);
+  }
+}
+
+@-webkit-keyframes run-r {
+  0% {
+    -webkit-transform: scale(0.85, 1) translateY(-16px);
+            transform: scale(0.85, 1) translateY(-16px);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+@keyframes run-r {
+  0% {
+    -webkit-transform: scale(0.85, 1) translateY(-16px);
+            transform: scale(0.85, 1) translateY(-16px);
+  }
+  100% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+/*# sourceMappingURL=koala.css.map */

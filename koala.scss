@@ -1,0 +1,383 @@
+// color variables
+$grey: #5F6A6A;
+$black: #1b1e23;
+$white: #eaf4de;
+$background: #a6c1a6;
+
+//
+html,
+body{
+    height: 100%;
+}
+
+body{
+    background: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    flex-direction: column;
+}
+
+//koala 
+.koala{
+    
+    transform: scale(1.2) translateY(40px);
+    zoom: 1.2;
+    animation: koala 0.25s ease-in-out alternate infinite;
+    transform-origin: bottom center;
+
+    &_ears{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: -1;
+        height: 2px;
+        transform: translateY(23px) scale(1.2s);
+        animation: ears 0.25s ease-in-out infinite alternate;
+    }
+
+    &_ears:before,
+    &_ears:after{
+        content: "";
+        display: block;
+        background: $black;
+        width: 3px;
+        height: 10px;
+        border: 5px solid $grey;
+        border-radius: 5px;
+    }
+    &_ears:before{
+        transform: rotate(140deg) scale(1, 1.05);
+        border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+    }
+
+    &_ears:after{
+        transform: rotate(-140deg) scale(1, 1.05);
+        border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+    }
+
+    &_contain {
+        transform-origin: bottom center;
+        animation: tilt 3s ease-in-out alternate infinite;
+    }
+
+    &_head,
+    &_body{
+        background: $grey;
+        height: 50px;
+        width: 60px;
+        border: 0.3px solid black;
+        border-radius: 30px 30px 15px 15px/40px 40px 10px 10px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    &_eyes{
+
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 65%;
+        left: 175;
+        top: 40%;
+        animation: eyes 3s ease-in-out infinite alternate;
+    }
+
+    &_eyes:before,
+    &_eyes:after{
+        content: "";
+        display: block;
+        width: 4px;
+        height: 4px;
+        border: 2px solid $white;
+        background: $black;
+    }
+    &_eyes:before{
+        transform: rotate(-30deg) scale(1, 0.75);
+        border-radius: 12px 8px 8px 8px/12px 8px 8px 8px;
+    }
+
+    &_eyes:after{
+        transform: rotate(30deg) scale(1, 0.75);
+        border-radius: 8px 12px 8px 8px/8px 12px 8px 8px;
+    }
+        //nose cirle
+    &_nose{
+        height: 30px;
+        width:10px;
+        background: $black;
+        border: 1px solid $white;
+        border-radius: 16px;
+        transform: scale(1, 0.5);
+        position: absolute;
+        top: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: nose 3s ease-in-out infinite;
+    }
+        //circle of the nose
+    &_nose:before{
+        content: "";
+        display: block;
+        height: 5px;
+        width: 5px;
+        border-radius: 2px;
+        background: $black;
+        margin-top: 4px;
+        animation: eyes 3s ease-in-out alternate infinite;
+    }
+        //lower part of nose
+    &_nose:after{
+        content: "";
+        display: block;
+        height: 15px;
+        width: 1.5px;
+        background: $black;
+        border-radius: 3px;
+        animation: eyes 3s ease-in-out alternate infinite;
+    
+    }
+    
+    &_mouth{
+        height: 15px;
+        width:20px;
+        background: #CD5C5C;
+        border: 1px solid $black;
+        border-radius: 16px;
+        transform: scale(1, 0.5);
+        position: absolute;
+        top: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        animation: nose 3s ease-in-out infinite;
+    }
+    
+    
+    &_mouth:after{
+        content: "";
+        display: block;
+        height: 8px;
+        width: 2.5px;
+        background: white;
+        border-radius: 3px;
+        animation: eyes 3s ease-in-out alternate infinite;
+    
+    }
+
+    &_arms{
+        position: relative;
+    
+    }
+        //arms design
+    &_arms:before,
+    &_arms:after{
+        content: "";
+        display: block;
+        position: absolute;
+        background: $grey;
+        border:1px solid $black;
+        width: 13px;
+        height: 30px;
+        top:3px;
+        border-radius: 5px 5px 5px 5px;
+        transform-origin: center top;
+        z-index: -1;
+
+    }
+        //left arm
+    &_arms:before{
+        transform: rotateZ(120deg);
+        left: 10px;
+        animation: wave 0.5s ease-in-out alternate infinite; 
+    }
+
+        //right arm
+    &_arms:after{
+        right: 10px;
+        transform: rotateZ( -35deg);
+        animation: offhand 0.8s ease-in-out alternate infinite; 
+    }
+    
+
+    &_body{
+        z-index: -1;
+        border:1px solid $black;
+        height:80px;
+        background: $grey;
+        border-bottom: 1px solid $black;
+        border-right: 1px solid $black;
+        border-left: 1px solid $black;
+        border-radius: 20px 20px 25px 25px / 40px 40px 25px 25px;
+        transform: scale(1, 0.65) translateY(-30px);
+        animation: breathe 0.25s ease-in-out infinite alternate;
+    }
+    
+    &_mage{
+        background: $white;
+        height:45px;
+        width: 25px;
+        margin-top:-80px;
+        margin-left:19px;
+        border: 0.3px solid black;
+        border-radius: 30px 30px 15px 15px/40px 40px 10px 10px;
+        position: absolute;
+        justify-content: center;
+
+    }
+
+
+
+
+    
+
+    //design legs
+
+    &_legs{
+        position: relative;
+        transform: translateY(-35px);
+        display:flex;
+        justify-content: space-between;
+        z-index: -2;
+        width: 50px;
+        margin-left: 5px;
+    }
+
+    &_legs:before,
+    &_legs:after{
+        content: "";
+        background: $grey;
+        display: block;
+        width: 18px;
+        height: 25px;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid $black;
+    }
+
+    &_legs:before{
+        transform: translateY(-10px);
+        animation: run-r 0.5s ease-in-out alternate infinite;
+    }
+
+    &_legs:after{
+        transform: translateY(-16px);
+        animation: run-r 0.5s ease-in-out alternate-reverse infinite;
+    }
+
+    //shadow beneath the legs
+
+    &_shadow{
+        content: "";
+        background: $black;
+        display: block;
+        width: 60px;
+        height: 60px;
+        transform: scale(1, 0.3);
+        border-radius: 30px;
+        position: relative;
+        z-index: -1;
+        opacity: 0.2;
+        animation: shadow 0.25s ease-in-out alternate infinite;
+    }
+}
+
+.weight{
+    transform-origin: bottom center;
+    animation: weight 0.5s ease-in-out alternate infinite;
+}
+
+//Start the animation
+
+@keyframes wave{
+    0%{
+        transform: rotateZ(90deg);
+    }
+    100%{
+        transform: rotateZ(120deg);
+    }
+}
+
+@keyframes offhand{
+    0%{
+        transform: rotateZ(-110deg);
+    }
+    100%{
+        transform: rotateZ(-80deg);
+    }
+}
+
+@keyframes ears{
+    0%{
+        transform: scale(1.1,1) translateY(0.02px);
+    }
+    100%{
+        transform: rotateZ(1deg);
+    }
+}
+
+@keyframes tilt{
+    0%{
+        transform: rotateZ(5deg);
+    }
+    100%{
+        transform: rotateZ(8deg);
+    }
+}
+
+@keyframes breathe{
+    0%{
+        transform: scale(1, 0.64) translateY(-30px);
+    }
+    100%{
+        transform: scale(1, 0.68) translateY(-30px);
+    }
+}
+
+@keyframes nose{
+    0%{
+        transform: scale(1, 0.5) translateY(-0.5px);
+    }
+    100%{
+        transform: scale(1, 0.5) translateY(0.5px);
+    }
+}
+
+@keyframes koala{
+    0%{
+        transform: scale(1) translateY(50px);
+    }
+    100%{
+        transform: scale(1) translateY(55px);
+    }
+}
+
+@keyframes shadow{
+    0%{
+        transform: scale(1.2, 0.3) translateY(-30px);
+    }
+    100%{
+        transform: scale(1.15, 0.3) translateY(-27px);
+    }
+}
+
+@keyframes weight{
+    0%{
+        transform: rotateZ(-10deg);
+    }
+    100%{
+        transform: rotateZ(10deg);
+    }
+}
+
+@keyframes run-r{
+    0%{
+        transform: scale(0.85, 1) translateY(-16px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
